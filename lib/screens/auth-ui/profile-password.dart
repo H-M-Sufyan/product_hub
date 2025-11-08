@@ -30,7 +30,6 @@ class _ProfilePasswordScreenState extends State<ProfilePasswordScreen> {
           children: [
             SizedBox(height: 20),
 
-            // Heading
             Text(
               "Profile & Password",
               style: TextStyle(
@@ -45,7 +44,6 @@ class _ProfilePasswordScreenState extends State<ProfilePasswordScreen> {
             ),
             SizedBox(height: 30),
 
-            // Full Name
             Text("Full Name"),
             SizedBox(height: 10),
             TextField(
@@ -60,7 +58,6 @@ class _ProfilePasswordScreenState extends State<ProfilePasswordScreen> {
 
             SizedBox(height: 20),
 
-            // Password
             Text("Password"),
             SizedBox(height: 10),
             TextField(
@@ -93,7 +90,6 @@ class _ProfilePasswordScreenState extends State<ProfilePasswordScreen> {
 
             SizedBox(height: 50),
 
-            // Referral Code (Optional)
             Text("Referral Code (Optional)"),
             SizedBox(height: 10),
             TextField(

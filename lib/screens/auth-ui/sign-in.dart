@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_hub/screens/auth-ui/reset-password.dart';
 import 'package:product_hub/screens/auth-ui/sign-up.dart';
 import 'package:product_hub/utils/colors.dart';
 
@@ -104,7 +105,10 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             InkWell(
               onTap: () {
-                
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ResetPasswordScreen()),
+                );
               },
               child: Text(
                 'Forgot Password',
