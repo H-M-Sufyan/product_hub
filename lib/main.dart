@@ -4,6 +4,7 @@ import 'package:product_hub/screens/auth-ui/sign-in.dart';
 import 'package:product_hub/screens/auth-ui/update-password.dart';
 import 'package:product_hub/screens/auth-ui/verification.dart';
 import 'package:product_hub/screens/user-panel/main-screen.dart';
+import 'package:product_hub/screens/user-panel/product-detail.dart';
 import 'package:product_hub/utils/colors.dart';
 
 void main() {
