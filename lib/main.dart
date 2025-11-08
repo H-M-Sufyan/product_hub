@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Product Hub',
-      home: UserMainScreen(),
+      home: SignInScreen(),
     );
   }
 }

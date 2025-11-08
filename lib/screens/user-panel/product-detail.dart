@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:product_hub/screens/user-panel/cart.dart';
 import 'package:product_hub/utils/colors.dart';
+
+import '../../widgets/add-to-cart.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -35,7 +38,15 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.share)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CartScreen()),
+              );
+            },
+            icon: Icon(Icons.shopping_cart),
+          ),
         ],
       ),
 
@@ -53,7 +64,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     items: productImages.map((img) {
                       return ClipRRect(
                         borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(img, fit: BoxFit.cover, width: double.infinity),
+                        child: Image.asset(
+                          img,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
                       );
                     }).toList(),
                     options: CarouselOptions(
@@ -91,7 +106,11 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SizedBox(height: 8),
               Text(
                 "\$199",
-                style: TextStyle(fontSize: 20, color: Colors.orange, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               SizedBox(height: 8),
               Row(
@@ -142,7 +161,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     margin: EdgeInsets.symmetric(vertical: 4),
                     child: ListTile(
                       leading: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/product2.png'),
+                        backgroundImage: AssetImage(
+                          'assets/images/product2.png',
+                        ),
                       ),
                       title: Text("User ${index + 1}"),
                       subtitle: Text("Amazing product, really loved it!"),
@@ -176,24 +197,36 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               child: ElevatedButton.icon(
                 onPressed: () {},
                 icon: Icon(Icons.favorite, color: Colors.white),
-                label: Text("Favorite", style: TextStyle(color: AppColors.fontColor),),
+                label: Text(
+                  "Favorite",
+                  style: TextStyle(color: AppColors.fontColor),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
                   padding: EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),
             SizedBox(width: 12),
             Expanded(
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  AddToCartPopup.show(context, "TMA-2HD Wireless", 199.0);
+                },
                 icon: Icon(Icons.shopping_cart, color: Colors.white),
-                label: Text("Add to Cart", style: TextStyle(color: AppColors.fontColor),),
+                label: Text(
+                  "Add to Cart",
+                  style: TextStyle(color: AppColors.fontColor),
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   padding: EdgeInsets.symmetric(vertical: 14),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),
