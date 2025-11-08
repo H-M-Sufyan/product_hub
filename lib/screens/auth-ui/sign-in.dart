@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_hub/screens/auth-ui/sign-up.dart';
 import 'package:product_hub/utils/colors.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -105,11 +106,19 @@ class _SignInScreenState extends State<SignInScreen> {
               'Forgot Password',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
-            Text(
-              'Sign Up',
-              style: TextStyle(
-                color: AppColors.buttonColor,
-                fontWeight: FontWeight.bold,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignUpScreen()),
+                );
+              },
+              child: Text(
+                'Sign Up',
+                style: TextStyle(
+                  color: AppColors.buttonColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
