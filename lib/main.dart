@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_hub/screens/auth-ui/profile-password.dart';
 import 'package:product_hub/screens/auth-ui/sign-in.dart';
 import 'package:product_hub/screens/auth-ui/verification.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Product Hub',
-      home: VerificationScreen(phoneNumber: '',),
+      home: ProfilePasswordScreen(),
     );
   }
 }

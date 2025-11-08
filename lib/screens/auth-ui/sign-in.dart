@@ -102,9 +102,14 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'Forgot Password',
-              style: TextStyle(fontWeight: FontWeight.bold),
+            InkWell(
+              onTap: () {
+                
+              },
+              child: Text(
+                'Forgot Password',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             InkWell(
               onTap: () {
